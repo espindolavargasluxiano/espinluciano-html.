@@ -1,0 +1,65 @@
+:root {
+  --fondo: #101a2b;
+  --panel: #17243b;
+  --texto: #e8edf5;
+  --suave: #9fb0c9;
+  --acento: #ffb347;
+  --linea: #2a3b58;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Lora", Georgia, serif;
+  line-height: 1.7;
+}
+
+a { color: var(--acento); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--acento); outline-offset: 3px; }
+
+header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+
+header { padding-top: 4rem; padding-bottom: 2.5rem; }
+header h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.6rem, 9vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+header p { color: var(--suave); margin-top: 1rem; font-size: 1.1rem; }
+
+nav { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; font-family: "Space Grotesk", sans-serif; }
+nav a { text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; }
+nav a:hover, nav a.activo { border-bottom-color: var(--acento); }
+
+section { padding: 2.5rem 0; border-top: 1px solid var(--linea); }
+h2 { font-family: "Space Grotesk", sans-serif; font-size: 1.7rem; margin-bottom: 1.2rem; }
+p + p { margin-top: 1rem; }
+
+.gustos { list-style: none; display: grid; gap: 1rem; }
+.gustos li {
+  background: var(--panel);
+  border-left: 4px solid var(--acento);
+  padding: 1rem 1.2rem;
+}
+.gustos li.marcado { background: #1f3150; }
+.gustos strong { font-family: "Space Grotesk", sans-serif; display: block; }
+.gustos span { color: var(--suave); }
+
+.datos { display: grid; grid-template-columns: max-content 1fr; gap: .4rem 1.5rem; margin-top: 1.5rem; }
+.datos dt { font-family: "Space Grotesk", sans-serif; color: var(--suave); }
+
+footer { padding-top: 2rem; padding-bottom: 3rem; color: var(--suave); border-top: 1px solid var(--linea); font-size: .95rem; }
+
+@media (min-width: 640px) {
+  .gustos { grid-template-columns: 1fr 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
